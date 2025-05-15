@@ -1,12 +1,21 @@
-import { useState } from 'react'
-import './App.css'
+import "bootstrap/dist/css/bootstrap.min.css"
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import UserLayout from "./Components/Layout/UserLayout";
+import React from "react";
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
-    <h1>hy</h1>
-
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<UserLayout/>}>
+      {}</Route>
+      <Route>{}</Route>
+    </Routes>
+    </BrowserRouter>
   )
 }
 
