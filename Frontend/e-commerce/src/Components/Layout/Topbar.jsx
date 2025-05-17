@@ -1,4 +1,4 @@
-                                                                import React from 'react'
+                                                                import React, { useState } from 'react'
                                                                 import {TbBrandMeta} from "react-icons/tb"
                                                                 import {IoLogoInstagram} from "react-icons/io"
                                                                 import {RiTwitterXLine} from "react-icons/ri"
@@ -6,9 +6,16 @@
                                                                 import NavBar from '../Common/NavBar'
                                                                 import { Link } from 'react-router-dom'
                                                                 import {HiOutlineUser , HiOutlineShoppingBag} from "react-icons/hi2"
-import CartDrawer from './CartDrawer'
+                                                                
+                                                                
+                                                                  import CartDrawer from './CartDrawer'
 
                                                                 const Topbar = () => {
+                                                                   const [drawerOpen,setDrawerOpen]= useState(false);
+
+                                                                  const toggleCartDrawer = ()=> {
+                                                                   setDrawerOpen(!drawerOpen);
+                                                                          } ;
                                                                   return (
                                                                     <div className='bg-[#FFF9F3] text-white '>
                                                                         <nav className='container mx-auto flex items-center justify-between py-4 px-6'>
@@ -70,7 +77,7 @@ import CartDrawer from './CartDrawer'
                                                                   </Link>
                                                                   
                                                                   Account
-                                                                  <button className='relative hover:text-black pl-3'>
+                                                                  <button onClick={toggleCartDrawer} className='relative hover:text-black pl-3'>
                                                                     <HiOutlineShoppingBag className='h-6 w-6 text-gray-700'/>
                                                                     <span className='absolute -top-2 bg-[#EB6D20]  text-white text-xs rounded-full  px-2 py-0.5'>12</span>
                                                                    </button>
@@ -82,7 +89,7 @@ import CartDrawer from './CartDrawer'
 
                                                                   
                                                                     </nav>
-                                                                    <CartDrawer />
+                                                                    <CartDrawer drawerOpen={drawerOpen}toggleCartDrawer={toggleCartDrawer} />
                                                                     <div className='hidden md:flex space-x-6 pl-30'>
                                                                           <Link to="#" className='text-gray-700   hover:text-black text-sm font-medium uppercase'>
                                                                           jewelry&Accessories
