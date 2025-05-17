@@ -5,10 +5,12 @@
                                                                 import SearchBar from '../Common/SearchBar'
                                                                 import NavBar from '../Common/NavBar'
                                                                 import { Link } from 'react-router-dom'
+                                                                import {HiOutlineUser , HiOutlineShoppingBag} from "react-icons/hi2"
+import CartDrawer from './CartDrawer'
 
                                                                 const Topbar = () => {
                                                                   return (
-                                                                    <div className='bg-[#FFF9F3] text-white'>
+                                                                    <div className='bg-[#FFF9F3] text-white '>
                                                                         <nav className='container mx-auto flex items-center justify-between py-4 px-6'>
                                                                         {/* left -logo */}
                                                                          <div className='text-2xl text-[#EB6D20] font-medium'>
@@ -51,24 +53,36 @@
 
                                                                   </div >
                                                                   <div className=' pl-2'>
-                                                                    <button className="bg-[#EB6D20] hover:bg-[#ffb688] text-white border border-[#1b130e] px-4 py-2 rounded-lg ">
+                                                                    <button className="bg-[#EB6D20] hover:bg-[#ffb688] text-white border border-[#1b130e] px-4 py-2 rounded-lg  ">
                                                                   Help
                                                                 </button>
 
-                                                                <div className='flex items-center space-x-4'>
-                                                                  <Link to="/profile" className='hover:text-black'/>
-                                                                  <HiOutlineUser
-                                                                </div>
+                                                                
  
 
 
 
                                                                   </div>
 
+                                                                      <div className='flex items-center space-x-4 text-black pl-3' >
+                                                                  <Link to="/profile" className='hover:text-black'>
+                                                                  <HiOutlineUser className='h-6 w-6 text-gray-700'/>
+                                                                  </Link>
+                                                                  
+                                                                  Account
+                                                                  <button className='relative hover:text-black pl-3'>
+                                                                    <HiOutlineShoppingBag className='h-6 w-6 text-gray-700'/>
+                                                                    <span className='absolute -top-2 bg-[#EB6D20]  text-white text-xs rounded-full  px-2 py-0.5'>12</span>
+                                                                   </button>
+                                                                  <span className='pl-5'>shopping</span> 
+
+                                                                </div>
+                                                                  
                                                                 </div>
 
                                                                   
                                                                     </nav>
+                                                                    <CartDrawer />
                                                                     <div className='hidden md:flex space-x-6 pl-30'>
                                                                           <Link to="#" className='text-gray-700   hover:text-black text-sm font-medium uppercase'>
                                                                           jewelry&Accessories
@@ -85,7 +99,7 @@
                                                                         </div>
                                                                            <div className='hidden md:flex space-x-6 pl-15'>
                                                                           <Link to="#" className='text-gray-700   hover:text-black text-sm font-medium uppercase'>
-                                                                          Clothing&Shoe
+                                                                          Wedding&Party
                                                                           </Link>
                                                                         </div>
                                                                            <div className='hidden md:flex space-x-6 pl-15'>
@@ -101,6 +115,7 @@
                                                                         
                                                                         
                                                                         </div>
+                                                                   
                                                                        
 
                                                                     </div>
