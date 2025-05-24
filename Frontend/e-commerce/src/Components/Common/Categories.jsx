@@ -1,35 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
+import category1 from "../../assets/category-1.jpg";
+import category2 from "../../assets/category-2.jpg";
+import category3 from "../../assets/category-3.jpg";
+import { Link } from 'react-router-dom';
 
-const CategoriesDropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const categories = ['Electronics', 'Clothing', 'Books', 'Home', 'Toys', 'Sports'];
+const Categories = () => {
+  const categories = [
+    { name: 'Clothing & Shoes', path: 'clothing', image: category1 },
+    { name: 'Home & Living', path: 'living', image: category2 },
+    { name: 'Art & Collectibles', path: 'art', image: category3 },
+  ];
 
   return (
-    <div className="relative inline-block text-left">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="bg-[#EB6D20] text-white px-4 py-2 rounded-lg hover:bg-[#ffb688] transition duration-200"
-      >
-        Categories
-      </button>
-
-      {isOpen && (
-        <div className="absolute z-10 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
-          <ul className="py-1">
-            {categories.map((category, index) => (
-              <li
-                key={index}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-black"
-              >
-                {category}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+    <div className="product__grid flex gap-6 ">
+      {categories.map((category, index) => (
+        <Link
+          to={`/categories/${category.path}`}
+          key={index}
+          className="relative overflow-hidden rounded-lg shadow-md group"
+        >
+          <img
+            src={category.image}
+            alt={category.name}
+            className="w-full h-full  object-cover group-hover:scale-105 transition duration-300"
+          />
+          <h4 className="absolute bottom-3 left-30 transform -translate-x-1/2 text-white text-sm font-semibold drop-shadow-md">
+            {category.name}
+          </h4>
+        </Link>
+      ))}
     </div>
   );
 };
 
-export default CategoriesDropdown;
+export default Categories;

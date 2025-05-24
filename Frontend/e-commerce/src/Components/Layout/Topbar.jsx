@@ -24,8 +24,9 @@
                                                                             E-commerce
                                                                         </div>
                                                                         {/* center */}
-                                                                <div className="w-[80%]  flex justify-center px-2 py-3">
-                                                                  <div className=" sm:w-[200px] md:w-[50%] flex items-center bg-white rounded-lg overflow-hidden shadow-sm">
+                                                                <div className="w-[80%] mx-auto justify-between flex  px-2 py-3">
+                                                                  <div className=" sm:w-[200px] justify-between
+                                                                mx-auto md:w-[50%] flex items-center bg-white rounded-lg overflow-hidden shadow-sm">
                                                                     {/* Select Dropdown (Left) */}
                                                                     <select className="bg-gray-100 text-black px-2 py-2 outline-none border-r rounded-lg border-gray-300">
                                                                       <option value="all">All categories</option>
